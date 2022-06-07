@@ -1,9 +1,49 @@
 {
-  "devDependencies": {
-    "tsup": "^5.12.7",
-    "typescript": "^4.6.4"
-  },
-  "dependencies": {
-    "uuid": "^8.3.2"
-  }
+	"devDependencies": {
+		"@types/jest": "^28.1.1",
+		"@types/uuid": "^8.3.4",
+		"jest": "^28.1.0",
+		"ts-jest": "^28.0.4",
+		"tsup": "^5.12.7",
+		"typescript": "^4.6.4"
+	},
+	"dependencies": {
+		"uuid": "^8.3.2"
+	},
+	"scripts": {
+		"test": "jest",
+		"build": "tsup src/uuid-to-adjective-animal.ts --format esm,cjs,iife --dts --clean",
+		"prepublishOnly": "yarn test && yarn build"
+	},
+	"main": "dist/uuid-to-adjective-animal.js",
+	"module": "dist/uuid-to-adjective-animal.mjs",
+	"types": "dist/uuid-to-adjective-animal.d.ts",
+	"files": [
+		"/dist"
+	],
+	"exports": {
+		".": {
+			"require": "./dist/uuid-to-adjective-animal.cjs",
+			"import": "./dist/uuid-to-adjective-animal.mjs",
+			"types": "./dist/uuid-to-adjective-animal.d.ts"
+		}
+	},
+	"description": "Generate human readable consistent names for a given UUID. e.g., 'Aggravated Emu'",
+	"keywords": [
+		"uuid",
+		"mnemonic",
+		"animal",
+		"adjective",
+		"name",
+		"consistent",
+		"human",
+		"readable"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JBoudMS/uuid-to-animal-adjectives"
+	},
+	"version": "0.0.1",
+	"name": "uuid-to-animal-adjectives",
+	"license": "MIT"
 }
