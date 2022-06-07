@@ -96,7 +96,11 @@ const testFormat = (
 					)
 				);
 			}
-			total[`${format} ${includePokemon ? "Pokémon " : ""}${length}`] = {
+			total[
+				`${format} ${
+					includePokemon ? "Pokémon " : ""
+				}${length.toLocaleString()}`
+			] = {
 				length,
 				amountOfDuplicates,
 				uniqueDuplicates: duplicates.length,
@@ -251,7 +255,7 @@ describe("When transforming uuids into adjectives", () => {
 			[
 				{ length: 100, greaterThanOrEqual: 1 },
 				{ length: 1000, greaterThanOrEqual: 1 },
-				{ length: 10000, greaterThanOrEqual: 1 },
+				{ length: 10000, greaterThanOrEqual: 0.999 },
 				{ length: 100000, greaterThanOrEqual: 0.999 },
 				{ length: 1000000, greaterThanOrEqual: 0.99 },
 			],
