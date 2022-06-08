@@ -16,14 +16,13 @@
 		"prepublishOnly": "yarn test && yarn build"
 	},
 	"main": "dist/uuid-to-adjective-animal.js",
-	"module": "dist/uuid-to-adjective-animal.mjs",
 	"types": "dist/uuid-to-adjective-animal.d.ts",
 	"files": [
 		"/dist"
 	],
 	"exports": {
 		".": {
-			"require": "./dist/uuid-to-adjective-animal.cjs",
+			"require": "./dist/uuid-to-adjective-animal.js",
 			"import": "./dist/uuid-to-adjective-animal.mjs",
 			"types": "./dist/uuid-to-adjective-animal.d.ts"
 		}
@@ -43,7 +42,7 @@
 		"type": "git",
 		"url": "https://github.com/JBoudMS/uuid-to-animal-adjectives"
 	},
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"name": "uuid-to-animal-adjectives",
 	"license": "MIT"
 }
